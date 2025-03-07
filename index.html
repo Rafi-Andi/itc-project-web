@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT CLUB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0066FD",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-[Montserrat]">
+    <header id="navbar" class="bg-white sticky top-0 z-50 transition-all duration-300">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center justify-between">
+           
+          <div class="flex items-center gap-2">
+            <div class="foto">
+              <img src="./src/assets/images/logoItc.png" alt="IT CLUB Logo" width="60" class="drop-shadow-xl"/>
+            </div>
+            <h1 class="font-bold text-xl">IT CLUB</h1>
+          </div>
+
+          
+          <nav class="hidden md:block">
+            <ul class="font-medium flex gap-6">
+              <li><a href="#" class="hover:text-primary transition-colors">Home</a></li>
+              <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+              <li><a href="#" class="hover:text-primary transition-colors">Profil</a></li>
+              <li><a href="#" class="hover:text-primary transition-colors">Materi</a></li>
+            </ul>
+          </nav>
+
+       
+          <div class="flex items-center gap-4">
+            <div class="button bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors hidden md:block">
+              <h1>Follow</h1>
+            </div>
+           
+            <div class="menu md:hidden">
+              <button id="menuButton" class="focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="mobileMenu" class="md:hidden hidden mt-4 pb-2">
+          <nav>
+            <ul class="font-medium flex flex-col gap-3">
+              <li><a href="#" class="block py-2 hover:text-primary transition-colors">Home</a></li>
+              <li><a href="#" class="block py-2 hover:text-primary transition-colors">About</a></li>
+              <li><a href="#" class="block py-2 hover:text-primary transition-colors">Profil</a></li>
+              <li><a href="#" class="block py-2 hover:text-primary transition-colors">Materi</a></li>
+              <li class="mt-2">
+                <a href="#" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">Follow</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div id="home" class="relative">
+        <div class="flex flex-wrap items-center justify-around py-10 md:px-[60px]">
+            <div class="max-w-[700px] px-6 mb-10 md:mb-0">
+                <div class="mb-6 title bg-[#E7F0F8] inline-block px-6 rounded-xl text-primary ">
+                    <h1>ITC SMKN 1 SURABAYA</h1>
+                </div>
+                <h1 class="font-bold text-xl">SELAMAT DATANG di ITC <span class="text-lg font-[Poppins]">(Information Technology Club)</span></h1>
+                <h1 class="font-bold text-3xl font-[Poppins] mt-2">🚀 Eksplorasi. Inovasi. Kolaborasi.</h1>
+                <p class="font-medium font-[Roboto] mt-4">ITC (Information Technology Club) adalah ekstrakurikuler di SMKN 1 Surabaya yang berfokus pada 
+                    pengembangan keterampilan di bidang teknologi. Di sini, kamu akan belajar dan berlatih bersama tim    
+                    yang antusias dalam dunia programming, desain grafis, jaringan, cybersecurity, dan tren teknologi terbaru.</p>
+            </div>
+            <div>
+                <img src="./src/assets/images/logoRobot.png" width="400px" alt="">
+            </div>
+    
+        </div>
+        <div class="container-hiasan hidden md:block">
+            <img class="absolute right-4 bottom-5 " src="./src/assets/images/briliant1.png" alt="" width="80px">
+            <img class="absolute right-[90px] bottom-[-10px]" src="./src/assets/images/baut.png" alt="" width="80px">
+            <img class="absolute right-7" src="./src/assets/images/donat.png" alt="" width="90px">
+        </div>
+    </div>
+
+
+    <script>
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        
+        const icon = menuButton.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        } else {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-xmark');
+        }
+      });
+
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+          navbar.classList.add('border-b', 'border-gray-200', 'shadow-sm');
+        } else {
+          navbar.classList.remove('border-b', 'border-gray-200', 'shadow-sm');
+        }
+      });
+    </script>
+  </body>
+</html>
