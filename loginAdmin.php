@@ -1,3 +1,32 @@
+<?php
+$pdo = require 'koneksi.php';
+$hasil = true;
+if (isset($_POST['nama']) && isset($_POST['password'])) {
+  $sql = 'SELECT * FROM admins
+  WHERE nama = :nama AND password = :password';
+  $query = $pdo->prepare($sql);
+  $query->execute(array(
+    'nama' => $_POST['nama'],
+    'password' => $_POST['password'],
+  ));
+  $admin = $query->fetch();
+  if(!$admin) {
+    $hasil = false;
+  } else if ($_POST['password'] != $admin['password']) {
+    $hasil = false; 
+  } else {
+    $hasil = true;
+    $_SESSION['admin'] = array(
+      'id' => $admin['id'],
+      'nama' => $admin['nama'],
+    );
+    header('Location: dashboardAdmin.php');
+    exit;
+  }
+  
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
   <head>
@@ -29,10 +58,14 @@
         <div
           class="bg-gradient-to-b from-[#EBF3FB] via-[#E0F7FF] to-[#E8E5FF] p-8 rounded-2xl shadow-xl"
         >
-          <form class="space-y-6" action="#" method="POST">
+        <?php 
+         if(!$hasil) { ?>
+          <p class="text-red-600"> Username / Password Salah </p>
+        <?php } ?>
+          <form class="space-y-6" action="" method="POST">
             <div>
               <label
-                for="email"
+                for="nama"
                 class="block text-sm font-medium text-gray-700"
               >
                 Email / Username
@@ -44,8 +77,8 @@
                   <i class="fa-solid fa-user text-gray-400"></i>
                 </div>
                 <input
-                  id="email"
-                  name="email"
+                  id="nama"
+                  name="nama"
                   type="text"
                   required
                   class="pl-10 block w-full px-4 py-3 border border-gray-300 rounded-lg bg-white/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
