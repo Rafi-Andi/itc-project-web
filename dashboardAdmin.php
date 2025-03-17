@@ -1,3 +1,20 @@
+<?php
+$pdo = require 'koneksi.php';
+
+if (!empty($_POST)){
+  $sql = 'INSERT INTO materi (title, divisi, date_time,  description, materi)
+  Values (:title, :divisi, :date_time, :description, :materi)';
+  $query = $pdo->prepare($sql);
+  $query->execute(array(
+    'title' => $_POST['title'],
+    'divisi' => $_POST['divisi'],
+    'date_time' => $_POST['date_time'],
+    'description' => $_POST['description'],
+    'materi' => $_POST['materi']
+  ));
+  header('Location: dashboardadmin.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
   <head>
@@ -78,7 +95,7 @@
                 Unggah materi pembelajaran untuk minggu ini
               </p>
 
-              <form class="mt-6 space-y-6" method="POST">
+              <form class="mt-6 space-y-6" method="POST" action="">
                 <div>
                   <label
                     for="title"
@@ -107,8 +124,8 @@
                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg bg-white/70 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     >
                       <option value="">Pilih divisi</option>
-                      <option value="10-RPL">Programming</option>
-                      <option value="11-RPL">Devgraf</option>
+                      <option value="Programming">Programming</option>
+                      <option value="Devgraf">Devgraf</option>
                     </select>
                   </div>
                   <div>
@@ -163,7 +180,7 @@
                 </div>
               </form>
             </div>
-
+            
             <div class="mt-8">
               <h2 class="text-xl font-bold text-gray-800">
                 Materi Terakhir Diunggah
@@ -206,28 +223,36 @@
                       </th>
                     </tr>
                   </thead>
+                  <?php
+                  $pdo = require 'koneksi.php';
+                  $sql2 = 'SELECT id, title, divisi, date_time, description, materi FROM materi';
+                  $query2 = $pdo->prepare($sql2);
+                  $query2->execute();
+                  while ($materi = $query2->fetch()) {?>
                   <tbody class="divide-y divide-gray-200">
                     <tr class="hover:bg-gray-50">
                       <td class="py-4 px-4 whitespace-nowrap">
                         <div class="flex items-center">
                           <div>
                             <div class="text-sm font-medium text-gray-900">
-                              (judul)
+                              <?php echo htmlentities($materi['title']); ?>
                             </div>
                           </div>
                         </div>
                       </td>
-                      <td class="py-4 px-4 whitespace-nowrap">(divisi)</td>
-                      <td class="py-4 px-4 whitespace-nowrap">(tanggal)</td>
-                      <td class="py-4 px-4 whitespace-nowrap">(deskripsi materi)</td>
-                      <td class="py-4 px-4 whitespace-nowrap">(isi materi)</td>
+                      <td class="py-4 px-4 whitespace-nowrap"><?php echo htmlentities($materi['divisi']);?> </td>
+                      <td class="py-4 px-4 whitespace-nowrap"><?php echo htmlentities($materi['date_time']); ?></td>
+                      <td class="py-4 px-4 whitespace-nowrap"><?php echo htmlentities($materi['description']); ?></td>
+                      <td class="py-4 px-4 whitespace-nowrap"><?php echo htmlentities($materi['materi']); ?></td>
                       <td class="py-4 px-4 whitespace-nowrap text-center">
-                        <button class="text-white px-3 py-1 rounded-lg hover:underline bg-red-600">
+                      
+                        <button class="text-white px-3 py-1 rounded-lg hover:underline bg-red-600"><a href="hapus.php?id=<?php echo $materi['id']; ?>">
                           Hapus
-                        </button>
+                        </a></button>
                       </td>
                     </tr>
                   </tbody>
+              <?php } ?>
                 </table>
               </div>
             </div>
