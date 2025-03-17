@@ -141,7 +141,7 @@
       </div>
     </header>
 
-    <div id="home" class="relative md:h-[100vh]">
+    <div id="home" class="relative py-[75px]">
       <div
         class="flex flex-wrap items-center justify-around py-10 md:py-10 md:px-[60px]"
       >
@@ -372,8 +372,8 @@
       </div>
     </div>  
 
-  <div class="p-4 md:px-[80px] mt-10 h-screen">
-    <div data-aos="zoom-in" data-aos-duration="1300" class="max-w-7xl mx-auto p-6 bg-gradient-to-b from-[#EBF3FB] via-[#E0F7FF] to-[#E8E5FF] rounded-2xl shadow-xl overflow-hidden">
+
+    <div data-aos="zoom-in" data-aos-duration="1300" class="max-w-7xl mx-4 md:mx-[100px] p-6 bg-gradient-to-b from-[#EBF3FB] via-[#E0F7FF] to-[#E8E5FF] rounded-2xl shadow-xl overflow-hidden">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div class="flex-1 space-y-6 font-['Poppins']">
           <div class="relative">
@@ -450,7 +450,7 @@
       </div>
   </div>
 
-  <div class="container mx-auto mt-10" id="dokumentasi">
+  <div class="container mx-auto mt-10 px-4 md:px-24" id="dokumentasi">
     <div data-aos="zoom-in" data-aos-duration="1200" class="mb-[50px] mt-[50px] flex items-center justify-center gap-3 text-3xl md:text-4xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
       <i class="fa-solid fa-camera hidden md:block"></i>
       <h1 class="text-3xl md:text-4xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
@@ -535,7 +535,7 @@
     </div>
   </div>
   
-  <div class="mt-4 md:mt-10 px-4 py-8 flex items-center justify-center">
+  <div class="mt-4 md:mt-10 px-4 md:px-24 py-8 flex items-center justify-center">
     <div data-aos="zoom-in" data-aos-duration="1300"  class="flex flex-col w-full max-w-7xl mx-auto p-6 sm:p-10 md:p-12 lg:p-16 bg-gradient-to-b from-[#EBF3FB] via-[#E0F7FF] to-[#E8E5FF] rounded-2xl shadow-xl overflow-hidden">
       <div class="flex items-center justify-center gap-2 sm:gap-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
         <i class="fa-solid fa-map-pin hidden md:block"></i>
@@ -662,6 +662,95 @@
     </div>
   </details>
 </div>
+<footer class="w-full bg-gradient-to-b from-[#EBF3FB] via-[#E0F7FF] to-[#E8E5FF] pt-24 mt-24 pb-8">
+  <div class="w-full max-w-7xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row justify-between items-start mb-12 gap-12">
+      <div class="max-w-sm">
+        <div class="mb-6">
+          <div class="flex items-center gap-1">
+            <img src="./src/assets/images/logoitc.png" alt="itc logo" width="50px">
+            <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">IT CLUB</h2>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-6 leading-relaxed">Mengembangkan bakat dan minat siswa dalam bidang teknologi informasi, programming, desain web, dan keterampilan digital untuk masa depan.</p>
+        <div class="flex items-center space-x-5">
+          <a href="https://www.instagram.com/itclubsmkn1sby?igsh=MXgzYXM4NnZna3VtdQ==" class="text-gray-500 hover:text-blue-600 transition-all">
+            <i class="fab fa-instagram text-lg"></i>
+          </a>
+          <a href="https://discord.gg/putbDTmTt2" class="text-gray-500 hover:text-blue-600 transition-all">
+            <i class="fab fa-discord text-lg"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-gray-800">Navigasi</h3>
+          <ul class="space-y-3">
+            <li><a href="#home" class="text-gray-600 hover:text-blue-600 transition-all">Home</a></li>
+            <li><a href="#about" class="text-gray-600 hover:text-blue-600 transition-all">About</a></li>
+            <li><a href="#dokumentasi" class="text-gray-600 hover:text-blue-600 transition-all">Dokumentasi</a></li>
+            <li><a href="#materi" class="text-gray-600 hover:text-blue-600 transition-all">Materi</a></li>
+          </ul>
+        </div>
+      
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-gray-800">Divisi</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-600 transition-all">Web Development</a></li>
+            <li><a href="#" class="text-gray-600 transition-all">UI/UX Design</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-gray-800">Kontak</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center">
+            <i class="fab fa-discord text-blue-600 mr-3"></i>
+              <a href="https://discord.gg/putbDTmTt2" class="text-gray-600 hover:text-blue-600 transition-all">Discord IT CLUB</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fab fa-instagram text-blue-600 mr-3"></i>
+              <a href="https://www.instagram.com/itclubsmkn1sby?igsh=MXgzYXM4NnZna3VtdQ==" class="text-gray-600 hover:text-blue-600 transition-all">itclubsmkn1sby</a>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt text-blue-600 mr-3 mt-1"></i>
+              <span class="text-gray-600">SMKN 1 Surabaya, Jl. Smea No.4, Wonokromo, Kec. Wonokromo, Surabaya, Jawa Timur 60243</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="py-8 border-t border-b border-gray-200 mb-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-2">Bergabung dengan IT Club</h3>
+          <p class="text-gray-600">Kembangkan skillmu dan jalin relasi yang luas!</p>
+        </div>
+        <div class="w-full md:w-auto">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4CS6VXup_PV1Pld9ZA7PW4SzOLF19BaPhlfbf-tuJdaJN0A/viewform" class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all">
+            <i class="fas fa-user-plus mr-2"></i>Daftar Sekarang
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+        <a href="#" class="text-gray-500 text-sm hover:text-blue-600 transition-all">#itclubsmkn1sby</a>
+        <a href="#" class="text-gray-500 text-sm hover:text-blue-600 transition-all">#smkn1surabaya</a>
+        <a href="#" class="text-gray-500 text-sm hover:text-blue-600 transition-all">#itekstrakulikuler</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full overflow-hidden mt-6">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" class="w-full h-20">
+      <path fill="#E0F7FF" fill-opacity="0.4" d="M0,32L80,42.7C160,53,320,75,480,74.7C640,75,800,53,960,42.7C1120,32,1280,32,1360,32L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+    </svg>
+  </div>
+</footer>
 
     <script>
       const menuButton = document.getElementById("menuButton");
