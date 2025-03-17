@@ -39,7 +39,7 @@
   <body class="font-[Montserrat]">
     <header
       id="navbar"
-      class="bg-white/70 backdrop-blur-2xl sticky top-0 z-50 transition-all duration-300"
+      class="bg-white/70 backdrop-blur-2xl fixed top-0 left-0 right-0 z-50 transition-all duration-300"
     >
       <div class="container mx-auto px-3 py-1">
         <div class="flex items-center justify-between">
@@ -190,25 +190,13 @@
                 class="tech-card bg-white p-3 rounded-lg shadow-md flex items-center gap-2"
               >
                 <i class="fa-solid fa-code text-primary"></i>
-                <span>Web Dev</span>
+                <span>Programming</span>
               </div>
               <div
                 class="tech-card bg-white p-3 rounded-lg shadow-md flex items-center gap-2"
               >
-                <i class="fa-solid fa-mobile-screen text-primary"></i>
-                <span>Mobile App</span>
-              </div>
-              <div
-                class="tech-card bg-white p-3 rounded-lg shadow-md flex items-center gap-2"
-              >
-                <i class="fa-solid fa-palette text-primary"></i>
-                <span>UI/UX</span>
-              </div>
-              <div
-                class="tech-card bg-white p-3 rounded-lg shadow-md flex items-center gap-2"
-              >
-                <i class="fa-solid fa-shield-halved text-primary"></i>
-                <span>Security</span>
+              <i class="fa-solid fa-computer text-primary"></i>
+                <span>Desain</span>
               </div>
             </div>
           </div>
@@ -439,12 +427,20 @@
           </div>
     
           <div class="flex flex-wrap gap-3 pt-2">
-            <button class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-bold transition-all transform hover:scale-105">
-              <i class="fas fa-paper-plane"></i> Daftar Sekarang
-            </button>
-            <button class="flex items-center gap-2 bg-white hover:bg-gray-100 text-blue-600 px-6 py-3 rounded-full font-bold border border-blue-200 transition-all">
-              <i class="fas fa-info-circle"></i> Info Lanjut
-            </button>
+            <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSf4CS6VXup_PV1Pld9ZA7PW4SzOLF19BaPhlfbf-tuJdaJN0A/viewform"
+            class="hidden md:flex items-center gap-2 btn-primary inline-block text-white px-6 py-2 rounded-lg font-medium shadow-blue"
+          >
+            <h1>Daftar Sekarang</h1>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+            <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSf4CS6VXup_PV1Pld9ZA7PW4SzOLF19BaPhlfbf-tuJdaJN0A/viewform"
+            class="hidden md:flex items-center gap-2 btn-primary inline-block text-white px-6 py-2 rounded-lg font-medium shadow-blue"
+          >
+          <i class="fa-brands fa-instagram"></i>
+            <h1>Info Lebih Lanjut</h1>
+          </a>
           </div>
         </div>
     
@@ -556,9 +552,9 @@
       </div>
       <h1 class="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-center mt-4">#ITCSMKN1Surabaya #BelajarIT #JoinUs #TeknologiMasaDepan</h1>
       
-      <button class="m-auto mt-6 sm:mt-8 md:mt-10 w-fit bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-5 md:px-6 py-2 sm:py-3 rounded-full font-bold transition-all transform hover:scale-105">
+      <a class="text-center" href="https://docs.google.com/forms/d/e/1FAIpQLSf4CS6VXup_PV1Pld9ZA7PW4SzOLF19BaPhlfbf-tuJdaJN0A/viewform"><button class="m-auto mt-6 sm:mt-8 md:mt-10 w-fit bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-5 md:px-6 py-2 sm:py-3 rounded-full font-bold transition-all transform hover:scale-105">
         <i class="fas fa-paper-plane"></i> Daftar Sekarang
-      </button>
+      </button></a>
     </div>
   </div>
 
@@ -573,8 +569,8 @@
     </div>
   </div>
 
-<!-- iki awmu engkok looping e ng kene pip  -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+<!-- iki awmu engkok looping e ng kene pip -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-10">
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div class="h-3 bg-gradient-to-r from-blue-600 to-purple-600"></div>
       <div class="p-6">
@@ -610,6 +606,62 @@
     
 <!-- iki sampek kene looping e -->
 
+
+<div class="space-y-6 max-w-3xl mx-auto p-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" id="materi">
+    <div class="text-center mb-10">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+        Pertanyaan Umum tentang Ekstrakulikuler IT
+      </h1>
+    </div>
+  </div>
+  <details class="group [&_summary::-webkit-details-marker]:hidden rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl" open>
+    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-white bg-gradient-to-r from-blue-600 to-purple-600">
+      <h2 class="font-bold text-lg">Apa syarat untuk bergabung dengan ekstrakulikuler IT ?</h2>
+      <svg class="size-6 shrink-0 transition duration-300 group-open:-rotate-180" 
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </summary>
+    <div class="mt-1 px-6 py-4 bg-gradient-to-b from-[#EBF3FB] via-[#E0F7FF] to-[#E8E5FF]">
+      <p class="leading-relaxed text-gray-700">
+        Syarat untuk bergabung dengan ekstrakulikuler IT adalah siswa SMKN 1 Surabaya yang memiliki minat di bidang teknologi informasi. Tidak ada persyaratan khusus mengenai kemampuan pemrograman awal, karena kami akan membimbing dari dasar. Yang terpenting adalah memiliki kemauan belajar dan komitmen untuk mengikuti kegiatan secara rutin.
+      </p>
+    </div>
+  </details>
+
+  <details class="group [&_summary::-webkit-details-marker]:hidden rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl">
+    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-white bg-gradient-to-r from-blue-600 to-purple-600">
+      <h2 class="font-bold text-lg">Kapan dan di mana kegiatan ekstrakulikuler IT dilaksanakan ?</h2>
+      <svg class="size-6 shrink-0 transition duration-300 group-open:-rotate-180" 
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </summary>
+    <div class="mt-1 px-6 py-4 bg-gradient-to-b from-[#EBF3FB] via-[#E0F7FF] to-[#E8E5FF]">
+      <p class="leading-relaxed text-gray-700">
+        Kegiatan ekstrakulikuler Information Technology Club (ITC) secara rutin dilaksanakan setiap hari Sabtu pukul 10.00-13.00 WIB bertempat di Laboratorium SMKN 1 Surabaya. Perlu diinformasikan bahwa jadwal tersebut dapat mengalami penyesuaian berdasarkan kondisi tertentu. Setiap perubahan jadwal akan disampaikan melalui grup komunikasi resmi ITC. Anggota dihimbau untuk selalu memperhatikan pengumuman terbaru melalui media komunikasi yang telah ditetapkan.
+      </p>
+    </div>
+  </details>
+
+
+  <details class="group [&_summary::-webkit-details-marker]:hidden rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl">
+    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-white bg-gradient-to-r from-blue-600 to-purple-600">
+      <h2 class="font-bold text-lg">Bagaimana cara bergabung dengan ekstrakulikuler?</h2>
+      <svg class="size-6 shrink-0 transition duration-300 group-open:-rotate-180" 
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </summary>
+    <div class="mt-1 px-6 py-4 bg-gradient-to-b from-[#EBF3FB] via-[#E0F7FF] to-[#E8E5FF]">
+      <p class="leading-relaxed text-gray-700">
+        Untuk bergabung dengan ekstrakulikuler kami, Anda dapat mengisi formulir pendaftaran online yang 
+        tersedia di halaman Daftar Sekarang atau menghubungi pembina ekstrakulikuler melalui Instagram yang sudah tertera.
+      </p>
+    </div>
+  </details>
+</div>
 
     <script>
       const menuButton = document.getElementById("menuButton");
