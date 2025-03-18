@@ -267,7 +267,7 @@ if (isset($_SESSION)) {
 
 
   <div data-aos="zoom-in" data-aos-duration="1300"
-    class="max-w-7xl mx-4 md:mx-[100px] p-6 bg-gradient-to-b from-[#EBF3FB] via-[#E0F7FF] to-[#E8E5FF] rounded-2xl shadow-xl overflow-hidden">
+    class="mt-24 md:mt-0 max-w-7xl mx-4 md:mx-[100px] p-6 bg-gradient-to-b from-[#EBF3FB] via-[#E0F7FF] to-[#E8E5FF] rounded-2xl shadow-xl overflow-hidden">
     <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
       <div class="flex-1 space-y-6 font-['Poppins']">
         <div class="relative">

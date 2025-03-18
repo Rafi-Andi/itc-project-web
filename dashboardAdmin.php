@@ -249,11 +249,11 @@ if (!empty($_POST)){
                           </div>
                         </div>
                       </td>
-                      <td class="py-4 px-4 whitespace-nowrap"><?php echo htmlentities($materi['divisi']);?> </td>
-                      <td class="py-4 px-4 whitespace-nowrap"><?php echo htmlentities($materi['date_time']); ?></td>
-                      <td class="py-4 px-4 whitespace-nowrap"><?php echo htmlentities($materi['description']); ?></td>
-                      <td class="py-4 px-4 whitespace-nowrap"><?php echo htmlentities($materi['materi']); ?></td>
-                      <td class="py-4 px-4 whitespace-nowrap text-center">
+                      <td class="py-4 px-4 break-words max-w-xs"><?php echo htmlentities($materi['divisi']);?> </td>
+                      <td class="py-4 px-4 break-words max-w-xs"><?php echo htmlentities($materi['date_time']); ?></td>
+                      <td class="py-4 px-4 break-words max-w-xs"><?php echo htmlentities(substr($materi['description'], 0, 600)) . '...'; ?></td>
+                      <td class="py-4 px-4 break-words max-w-xs"><?php echo htmlentities(substr($materi['description'], 0, 600)) . '...'; ?>
+                      <td class="py-4 px-4 break-words max-w-xs text-center">
                       
                         <button class="text-white px-3 py-1 rounded-lg hover:underline bg-red-600"><a href="hapus.php?id=<?php echo $materi['id']; ?>">
                           Hapus
@@ -269,5 +269,51 @@ if (!empty($_POST)){
         </main>
       </div>
     </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("form").addEventListener("submit", function (event) {
+        let title = document.getElementById("title").value.trim();
+        let divisi = document.getElementById("divisi").value.trim();
+        let date_time = document.getElementById("date_time").value.trim();
+        let description = document.getElementById("description").value.trim();
+        let materi = document.getElementById("materi").value.trim();
+
+        let errorMessage = "";
+
+        if (!title) {
+            errorMessage += "⚠ Judul Materi harus diisi!\n";
+        } else if (title.length < 5) {
+            errorMessage += "⚠ Judul Materi minimal 5 karakter!\n";
+        }
+
+        if (!divisi) {
+            errorMessage += "⚠ Pilih divisi terlebih dahulu!\n";
+        }
+
+        if (!date_time) {
+            errorMessage += "⚠ Tanggal & Waktu harus diisi!\n";
+        }
+
+        if (!description) {
+            errorMessage += "⚠ Deskripsi Materi harus diisi!\n";
+        } else if (description.length < 10) {
+            errorMessage += "⚠ Deskripsi Materi minimal 10 karakter!\n";
+        }
+
+        if (!materi) {
+            errorMessage += "⚠ Isi Materi harus diisi!\n";
+        } else if (materi.length < 20) {
+            errorMessage += "⚠ Isi Materi minimal 20 karakter!\n";
+        }
+
+        if (errorMessage) {
+            alert(errorMessage);
+            event.preventDefault();
+        }
+    });
+});
+</script>
+
   </body>
 </html>

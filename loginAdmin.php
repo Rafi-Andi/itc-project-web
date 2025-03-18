@@ -147,4 +147,49 @@ if (isset($_POST['nama']) && isset($_POST['password'])) {
       </div>
     </div>
   </body>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function (event) {
+    let isValid = true;
+
+    const title = document.getElementById("title");
+    if (title.value.trim().length < 5) {
+      alert("Judul Materi harus memiliki minimal 5 karakter.");
+      isValid = false;
+    }
+
+    const divisi = document.getElementById("divisi");
+    if (divisi.value.trim() === "") {
+      alert("Silakan pilih divisi.");
+      isValid = false;
+    }
+
+    const dateTime = document.getElementById("date_time");
+    if (dateTime.value.trim() === "") {
+      alert("Silakan pilih tanggal dan waktu kegiatan.");
+      isValid = false;
+    }
+
+    const description = document.getElementById("description");
+    if (description.value.trim().length < 10) {
+      alert("Deskripsi Materi harus minimal 10 karakter.");
+      isValid = false;
+    }
+
+    const materi = document.getElementById("materi");
+    if (materi.value.trim().length < 20) {
+      alert("Isi Materi harus minimal 20 karakter.");
+      isValid = false;
+    }
+
+    if (!isValid) {
+      event.preventDefault(); 
+    }
+  });
+});
+</script>
+
 </html>
