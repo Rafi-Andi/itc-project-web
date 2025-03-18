@@ -1,4 +1,13 @@
 <?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+  header('Location: loginAdmin.php');
+  exit;
+}
+?>
+
+<?php
+
 $pdo = require 'koneksi.php';
 
 if (!empty($_POST)){

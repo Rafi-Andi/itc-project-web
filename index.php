@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION)) {
+   session_unset();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 

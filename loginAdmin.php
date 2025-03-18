@@ -1,13 +1,12 @@
 <?php
+session_start();
 $pdo = require 'koneksi.php';
 $hasil = true;
 if (isset($_POST['nama']) && isset($_POST['password'])) {
-  $sql = 'SELECT * FROM admins
-  WHERE nama = :nama AND password = :password';
+  $sql = 'SELECT * FROM admins';
   $query = $pdo->prepare($sql);
   $query->execute(array(
-    'nama' => $_POST['nama'],
-    'password' => $_POST['password'],
+    
   ));
   $admin = $query->fetch();
   if(!$admin) {
@@ -16,10 +15,10 @@ if (isset($_POST['nama']) && isset($_POST['password'])) {
     $hasil = false; 
   } else {
     $hasil = true;
-    $_SESSION['admin'] = array(
+    $_SESSION['admin'] = [
       'id' => $admin['id'],
       'nama' => $admin['nama'],
-    );
+    ];
     header('Location: dashboardAdmin.php');
     exit;
   }
