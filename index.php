@@ -570,39 +570,52 @@
   </div>
 
 <!-- iki awmu engkok looping e ng kene pip -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-10">
-    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      <div class="h-3 bg-gradient-to-r from-blue-600 to-purple-600"></div>
-      <div class="p-6">
-        <div class="flex items-center justify-between mb-3">
-          <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">divisi</span>
-          <span class="text-xs text-gray-500">tanggal</span>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-2">judul</h3>
-        <p class="text-gray-600 text-sm mb-4">deskripsi</p>
-        <div class="flex items-center text-xs text-gray-500 mb-4">
-          <i class="fa-solid fa-calendar mr-1"></i> judul
-        </div>
-      </div>
-      <div class="px-6 py-3 bg-gray-50 flex justify-between items-center">
-        <button onclick="openModal('modal1')" class="inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md transition-all transform hover:scale-105">
-          <i class="fa-solid fa-eye mr-1"></i> Lihat Selengkapnya
-        </button>
-      </div>
-    </div>
-  </div>
+  
   
   <!-- iki sng id modal1 iku gantien id sesuai database e pip , dadi lebokno id db ne ng kunuh -->
-  <div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+
+
+  <!-- iki php ne -->
+  <?php
+  $pdo = require 'koneksi.php';
+  $sql2 = 'SELECT id, title, divisi, date_time, description, materi FROM materi';
+  $query2 = $pdo->prepare($sql2);
+  $query2->execute();
+  while ($materi = $query2->fetch()) {?>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-10">
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <div class="h-3 bg-gradient-to-r from-blue-600 to-purple-600"></div>
+    <div class="p-6">
+      <div class="flex items-center justify-between mb-3">
+        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded"><?php echo htmlentities($materi['divisi']);?></span>
+        <span class="text-xs text-gray-500"><?php echo htmlentities($materi['title']); ?></span>
+      </div>
+      <h3 class="text-xl font-bold text-gray-900 mb-2"><?php echo htmlentities($materi['title']); ?></h3>
+      <p class="text-gray-600 text-sm mb-4"><?php echo htmlentities($materi['description']); ?></p>
+      <div class="flex items-center text-xs text-gray-500 mb-4">
+        <i class="fa-solid fa-calendar mr-1"></i> <?php echo htmlentities($materi['date_time']); ?>
+      </div>
+    </div>
+    <div class="px-6 py-3 bg-gray-50 flex justify-between items-center">
+      <button onclick="openModal('modal2')" class="inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md transition-all transform hover:scale-105">
+        <i class="fa-solid fa-eye mr-1"></i> Lihat Selengkapnya
+      </button>
+    </div>
+  </div>
+  </div>
+
+  <div id="modal2" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
     <div class="bg-white rounded-lg shadow-xl max-w-lg w-full p-6 relative">
-      <button onclick="closeModal('modal1')" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600">
+      <button onclick="closeModal('modal2')" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600">
         <i class="fa-solid fa-xmark text-2xl"></i>
       </button>
-      <h2 class="text-2xl font-bold text-gray-900">Judul</h2>
-      <p class="text-gray-600 mt-2">Materi</p>
-      <p class="text-gray-600 mt-4"><i class="fa-solid fa-calendar mr-1"></i> Tanggal</p>
+      <h2 class="text-2xl font-bold text-gray-900"><?php echo htmlentities($materi['title']); ?></h2>
+      <p class="text-gray-600 mt-2"><?php echo htmlentities($materi['materi']); ?></p>
+      <p class="text-gray-600 mt-4"><i class="fa-solid fa-calendar mr-1"></i> <?php echo htmlentities($materi['date_time']); ?></p>
     </div>
-  </div> 
+  </div>
+  <?php } ?>
+
     
 <!-- iki sampek kene looping e -->
 
