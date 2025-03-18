@@ -11,6 +11,7 @@ if (isset($_SESSION)) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./src/assets/images/logoItc.png">
   <title>IT CLUB</title>
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -92,16 +93,16 @@ if (isset($_SESSION)) {
         <nav>
           <ul class="font-medium flex flex-col gap-3">
             <li>
-              <a href="#" class="block py-2 hover:text-primary transition-colors">Home</a>
+              <a href="#home" class="block py-2 hover:text-primary transition-colors">Home</a>
             </li>
             <li>
-              <a href="#" class="block py-2 hover:text-primary transition-colors">About</a>
+              <a href="#about" class="block py-2 hover:text-primary transition-colors">About</a>
             </li>
             <li>
-              <a href="#" class="block py-2 hover:text-primary transition-colors">Profil</a>
+              <a href="#dokumentasi" class="block py-2 hover:text-primary transition-colors">Dokumentasi</a>
             </li>
             <li>
-              <a href="#" class="block py-2 hover:text-primary transition-colors">Materi</a>
+              <a href="#materi" class="block py-2 hover:text-primary transition-colors">Materi</a>
             </li>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4CS6VXup_PV1Pld9ZA7PW4SzOLF19BaPhlfbf-tuJdaJN0A/viewform"
               class="w-fit flex gap-2 items-center gap-2 btn-primary inline-block text-white px-6 py-2 rounded-lg font-medium shadow-blue">
@@ -506,22 +507,24 @@ if (isset($_SESSION)) {
   </div>
 
   <?php
-  $query2->execute();
-  while ($materi = $query2->fetch()) { ?>
-    <div id="<?php echo htmlentities($materi['id']); ?>"
-      class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
-      <div class="bg-white rounded-lg shadow-xl max-w-lg w-full p-6 relative">
-        <button onclick="closeModal(<?php echo htmlentities($materi['id']); ?>)"
-          class="absolute top-2 right-2 text-gray-400 hover:text-gray-600">
-          <i class="fa-solid fa-xmark text-2xl"></i>
-        </button>
-        <h2 class="text-2xl font-bold text-gray-900"><?php echo htmlentities($materi['title']); ?></h2>
-        <p class="text-gray-600 mt-2"><?php echo htmlentities($materi['materi']); ?></p>
-        <p class="text-gray-600 mt-4"><i class="fa-solid fa-calendar mr-1"></i>
-          <?php echo htmlentities($materi['date_time']); ?></p>
-      </div>
+$query2->execute();
+while ($materi = $query2->fetch()) { ?>
+  <div id="<?php echo htmlentities($materi['id']); ?>"
+    class="transition-all fixed top-0 right-0 h-full w-full bg-black bg-opacity-50 z-50 flex items-center justify-end hidden">
+    <div class="bg-white rounded-l-lg shadow-xl w-full md:w-4/5 h-full p-6 relative overflow-auto">
+      <button onclick="closeModal(<?php echo htmlentities($materi['id']); ?>)"
+        class="absolute top-2 right-2 text-gray-400 hover:text-gray-600">
+        <i class="fa-solid fa-xmark text-2xl"></i>
+      </button>
+      <h2 class="text-2xl font-bold text-gray-900"><?php echo htmlentities($materi['title']); ?></h2>
+      <p class="text-gray-600 mt-2"><?php echo htmlentities($materi['materi']); ?></p>
+      <p class="text-gray-600 mt-4"><i class="fa-solid fa-calendar mr-1"></i>
+        <?php echo htmlentities($materi['date_time']); ?></p>
     </div>
-  <?php } ?>
+  </div>
+<?php } ?>
+
+
 
 
   <div class="space-y-6 max-w-3xl mx-auto p-6">
